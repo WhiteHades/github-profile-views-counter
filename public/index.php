@@ -1,22 +1,13 @@
 <?php
 
-/*
- * This file is part of GitHub Profile Views Counter.
- *
- * (c) Anton Komarev <anton@komarev.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 use Dotenv\Exception\InvalidPathException;
-use Komarev\GitHubProfileViewsCounter\BadgeImageRendererService;
-use Komarev\GitHubProfileViewsCounter\CounterRepositoryFactory;
-use Komarev\GitHubProfileViewsCounter\Request;
-use Komarev\GitHubProfileViewsCounter\Username;
-use Komarev\GitHubProfileViewsCounter\Count;
+use App\GitHubProfileViewsCounter\BadgeImageRendererService;
+use App\GitHubProfileViewsCounter\CounterRepositoryFactory;
+use App\GitHubProfileViewsCounter\Request;
+use App\GitHubProfileViewsCounter\Username;
+use App\GitHubProfileViewsCounter\Count;
 
 $appBasePath = realpath(__DIR__ . '/..');
 

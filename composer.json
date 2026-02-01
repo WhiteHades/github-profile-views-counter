@@ -13,16 +13,14 @@
     ],
     "authors": [
         {
-            "name": "Anton Komarev",
-            "email": "anton@komarev.com",
-            "homepage": "https://komarev.com",
-            "role": "Developer"
+            "name": "GitHub Profile Views Counter",
+            "role": "Maintainer"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Contracts\\Komarev\\GitHubProfileViewsCounter\\": "contracts/",
-            "Komarev\\GitHubProfileViewsCounter\\": "src/"
+            "Contracts\\App\\GitHubProfileViewsCounter\\": "contracts/",
+            "App\\GitHubProfileViewsCounter\\": "src/"
         }
     },
     "require": {
@@ -33,7 +31,9 @@
     },
     "suggest": {
         "ext-pdo": "*",
-        "ext-simplexml": "*"
+        "ext-simplexml": "*",
+        "ext-curl": "*",
+        "ext-redis": "*"
     },
     "config": {
         "sort-packages": true

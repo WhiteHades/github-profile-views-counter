@@ -1,19 +1,10 @@
 <?php
 
-/*
- * This file is part of GitHub Profile Views Counter.
- *
- * (c) Anton Komarev <anton@komarev.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
-namespace Komarev\GitHubProfileViewsCounter;
+namespace App\GitHubProfileViewsCounter;
 
-use Contracts\Komarev\GitHubProfileViewsCounter\CounterRepositoryInterface;
+use Contracts\App\GitHubProfileViewsCounter\CounterRepositoryInterface;
 use Dotenv\Dotenv;
 use PDO;
 
@@ -69,6 +60,12 @@ final class CounterRepositoryFactory
                     : $appBasePath . '/storage';
 
                 return new CounterFileRepository($storagePath);
+            case 'redis':
+                $dotEnv->required([
+                    'REDIS_URL',
+                ]);
+
+                return new CounterRedisRepository($env['REDIS_URL']);
             default:
                 throw new \Exception(
                     "Unsupported repository `$repositoryType`",
