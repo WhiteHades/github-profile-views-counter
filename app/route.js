@@ -28,13 +28,11 @@ export async function GET(request) {
   const rawUsername = params.username.trim();
 
   if (rawUsername === '') {
-    return Response.redirect(
-      'https://github.com/antonkomarev/github-profile-views-counter'
-    );
+    return Response.redirect('https://github.com/WhiteHades');
   }
 
   const badgeLabel = params.label ?? 'Profile views';
-  const badgeColor = params.color ?? 'blue';
+  const badgeColor = params.color ?? 'cba6f7';
   const badgeStyle = normalizeStyle(params.style ?? 'flat');
   const baseCount = params.base ?? '0';
   const isCountAbbreviated = params.isCountAbbreviated;

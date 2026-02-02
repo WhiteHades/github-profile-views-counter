@@ -1,4 +1,4 @@
-const exampleBadge = '/?username=your-github-username&style=flat-square&color=blue';
+const exampleBadge = '/?username=your-github-username&style=flat-square&color=cba6f7';
 const exampleMarkdown = `![](${exampleBadge})`;
 
 export default function DocsPage() {
