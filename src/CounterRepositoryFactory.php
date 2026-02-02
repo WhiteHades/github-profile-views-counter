@@ -14,36 +14,29 @@ final class CounterRepositoryFactory
         string $appBasePath
     ): CounterRepositoryInterface {
         $dotEnv = Dotenv::createImmutable($appBasePath);
-        $env = $dotEnv->load();
+        $dotEnv->safeLoad();
 
-        $dotEnv->required([
-            'REPOSITORY',
-        ]);
-
-        $repositoryType = $env['REPOSITORY'];
+        $repositoryType = $this->requireEnv('REPOSITORY');
 
         switch ($repositoryType) {
             case 'pdo':
-                $dotEnv->required([
-                    'DB_DRIVER',
-                    'DB_HOST',
-                    'DB_PORT',
-                    'DB_USER',
-                    'DB_PASSWORD',
-                    'DB_NAME',
-                ]);
-
+                $dbDriver = $this->requireEnv('DB_DRIVER');
+                $dbHost = $this->requireEnv('DB_HOST');
+                $dbPort = (int) $this->requireEnv('DB_PORT');
+                $dbUser = $this->requireEnv('DB_USER');
+                $dbPassword = $this->requireEnv('DB_PASSWORD');
+                $dbName = $this->requireEnv('DB_NAME');
                 $dsn = sprintf(
                     '%s:host=%s;port=%d;dbname=%s',
-                    $env['DB_DRIVER'],
-                    $env['DB_HOST'],
-                    $env['DB_PORT'],
-                    $env['DB_NAME'],
+                    $dbDriver,
+                    $dbHost,
+                    $dbPort,
+                    $dbName,
                 );
                 $dbConnection = new PDO(
                     $dsn,
-                    $env['DB_USER'],
-                    $env['DB_PASSWORD'],
+                    $dbUser,
+                    $dbPassword,
                     [
                         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     ],
@@ -51,25 +44,44 @@ final class CounterRepositoryFactory
 
                 return new CounterPdoRepository($dbConnection);
             case 'file':
-                $dotEnv->required([
-                    'FILE_STORAGE_PATH',
-                ]);
-
-                $storagePath = $env['FILE_STORAGE_PATH'] !== ''
-                    ? $env['FILE_STORAGE_PATH']
+                $storagePath = $this->getEnv('FILE_STORAGE_PATH');
+                $storagePath = $storagePath !== null && $storagePath !== ''
+                    ? $storagePath
                     : $appBasePath . '/storage';
 
                 return new CounterFileRepository($storagePath);
             case 'redis':
-                $dotEnv->required([
-                    'REDIS_URL',
-                ]);
+                $redisUrl = $this->requireEnv('REDIS_URL');
 
-                return new CounterRedisRepository($env['REDIS_URL']);
+                return new CounterRedisRepository($redisUrl);
             default:
                 throw new \Exception(
                     "Unsupported repository `$repositoryType`",
                 );
         }
+    }
+
+    private function getEnv(string $key): ?string
+    {
+        $value = $_ENV[$key] ?? $_SERVER[$key] ?? getenv($key);
+
+        if ($value === false || $value === null) {
+            return null;
+        }
+
+        return (string) $value;
+    }
+
+    private function requireEnv(string $key): string
+    {
+        $value = $this->getEnv($key);
+
+        if ($value === null || $value === '') {
+            throw new \RuntimeException(
+                "Missing required environment variable `$key`",
+            );
+        }
+
+        return $value;
     }
 }
