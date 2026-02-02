@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Komarev\GitHubProfileViewsCounter;
+namespace App\GitHubProfileViewsCounter;
 
 use Webmozart\Assert\Assert;
 

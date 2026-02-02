@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace Komarev\GitHubProfileViewsCounter;
+namespace App\GitHubProfileViewsCounter;
 
-use Contracts\Komarev\GitHubProfileViewsCounter\CounterRepositoryInterface;
-use Contracts\Komarev\GitHubProfileViewsCounter\Exceptions\InvalidPathException;
+use Contracts\App\GitHubProfileViewsCounter\CounterRepositoryInterface;
+use Contracts\App\GitHubProfileViewsCounter\Exceptions\InvalidPathException;
 
 final class CounterFileRepository implements
     CounterRepositoryInterface
