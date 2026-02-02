@@ -6,19 +6,18 @@ Fork deployment for views.mohammedefaz.com.
 
 <p align="center">
 <a href="https://discord.gg/geJF43E"><img src="https://img.shields.io/static/v1?logo=discord&label=&message=Discord&color=36393f&style=flat-square" alt="Discord"></a>
-<a href="https://github.com/antonkomarev/github-profile-views-counter/blob/master/LICENSE"><img src="https://img.shields.io/github/license/antonkomarev/github-profile-views-counter.svg?style=flat-square" alt="License"></a>
+<a href="https://github.com/WhiteHades/github-profile-views-counter/blob/master/LICENSE"><img src="https://img.shields.io/github/license/WhiteHades/github-profile-views-counter.svg?style=flat-square" alt="License"></a>
 </p>
 
 ## Introduction
 
-Try [Ÿ HŸPE] service as the more robust and feature rich solution.
-
-GHPVС project is proof of concept. This counter designed to be an analytical instrument for you, but not for people who are visiting your profile.
+This fork is a self-hosted, Next.js version of the classic profile counter.
+It is designed to be an analytical instrument for you, not a public scoreboard.
 It could be used to see profile views dynamics as result of development activity, blogging or taking part in a conference.
 
 It counts how many times your GitHub profile has been viewed and displays them in your profile, for free.
 
-![antonkomarev-profile-views-counter](https://user-images.githubusercontent.com/1849174/88077155-9ccc2400-cb83-11ea-8d9c-d18a8b1dc297.png)
+![profile-views-counter-example](https://user-images.githubusercontent.com/1849174/88077155-9ccc2400-cb83-11ea-8d9c-d18a8b1dc297.png)
 
 ## Next.js Deployment (Vercel)
 
@@ -55,10 +54,8 @@ Open `/docs` for a styled usage overview.
 
 ## Usage
 
-Cloud solution launched as 100% free experience. [Help me cut server costs] if you like this service.
-
 If you want to see big numbers in your profile, deploy a standalone solution to draw any views count you want
-without spamming our server. Everybody knows that any counters could be faked.
+without spamming public servers. Everybody knows that any counters could be faked.
 
 > A billion fake profile views doesn't make you a very popular person, it makes you a person with a billion number in the counter.
 
@@ -75,7 +72,7 @@ GitHub magic will happen as soon as you will create a new repository named equal
 You need to add counter in README.md file in your profile repository via Markdown syntax:
 
 ```markdown
-![](https://komarev.com/ghpvc/?username=your-github-username)
+![](https://views.mohammedefaz.com/?username=your-github-username)
 ```
 
 > [!NOTE]
@@ -86,7 +83,7 @@ You need to add counter in README.md file in your profile repository via Markdow
 
 ### Color
 
-You can use any valid HEX color or pick from a predefined set of named colors (`blue` is the default).
+You can use any valid HEX color or pick from a predefined set of named colors (`cba6f7` is the default).
 
 | color | demo |
 | ----- | ---- |
@@ -105,13 +102,13 @@ You can use any valid HEX color or pick from a predefined set of named colors (`
 **Named color**
 
 ```markdown
-![](https://komarev.com/ghpvc/?username=your-github-username&color=green)
+![](https://views.mohammedefaz.com/?username=your-github-username&color=green)
 ```
 
 **Hex color**
 
 ```markdown
-![](https://komarev.com/ghpvc/?username=your-github-username&color=dc143c)
+![](https://views.mohammedefaz.com/?username=your-github-username&color=dc143c)
 ```
 
 > [!NOTE]
@@ -131,7 +128,7 @@ The following styles are available (`flat` is the default).
 | `pixel` | this is "invisible" mode for counter. Use it when you want to have counter without of displaying of it |
 
 ```markdown
-![](https://komarev.com/ghpvc/?username=your-github-username&style=flat-square)
+![](https://views.mohammedefaz.com/?username=your-github-username&style=flat-square)
 ```
 
 ### Label
@@ -141,7 +138,7 @@ You can overwrite default `Profile views` text with your own label.
 ![](https://img.shields.io/static/v1?label=PROFILE+VIEWS&message=1234567890&color=007ec6)
 
 ```markdown
-![](https://komarev.com/ghpvc/?username=your-github-username&label=PROFILE+VIEWS)
+![](https://views.mohammedefaz.com/?username=your-github-username&label=PROFILE+VIEWS)
 ```
 
 > [!NOTE]
@@ -156,7 +153,7 @@ This is useful if you are migrating from another service.
 For example, a user with 1000 views on another service who wants to migrate to GHPVC will use the following url
 to ensure the 1000 views are accounted for:
 ```markdown
-![](https://komarev.com/ghpvc/?username=your-github-username&base=1000)
+![](https://views.mohammedefaz.com/?username=your-github-username&base=1000)
 ```
 
 ### Abbreviation
@@ -168,22 +165,14 @@ For example, a counter with 12345 views, will be displayed as 12.3K.
 ![](https://img.shields.io/static/v1?label=Profile+views&message=12.3K&color=007ec6)
 
 ```markdown
-![](https://komarev.com/ghpvc/?username=your-github-username&abbreviated=true)
+![](https://views.mohammedefaz.com/?username=your-github-username&abbreviated=true)
 ```
 
 ## FAQ
 
 ### Can I see detailed statistics?
 
-This project provides minimalistic counter only. Use [Ÿ HŸPE] service if you want to get detailed info about:
-- user profile views
-- user followers history
-- repository stars history
-- repository traffic for longer than 14 days
-
-### How to reset counter?
-
-To reset counter you should log in to the [Ÿ HŸPE] service, and then you will be able to reset counter on the https://yhype.me/ghpvc page.
+This project provides a minimalistic counter only. Use a separate analytics tool if you need detailed insights.
 
 ### Why does the counter increase every time the page is reloaded?
 
@@ -195,26 +184,14 @@ we don't know who initiated it.
 
 ### Are you making money on it?
 
-No. Only spending it. [Become a sponsor] if you want it to keep running & receive new features.
-
-## Alternatives
-
-- [Ÿ HŸPE] enhanced GitHub professional account statistics & analytics
+No. This fork is a personal deployment.
 
 ## License
 
-- `GitHub Profile Views Counter` application is open-sourced software licensed under the [MIT license](LICENSE) by [Anton Komarev].
+- `GitHub Profile Views Counter` application is open-sourced software licensed under the [MIT license](LICENSE) by Mohammed Efaz.
 - `Eye Octicon` hero image licensed under MIT license by [GitHub, Inc].
 
-## 🌟 Stargazers over time
-
-[![Stargazers over time](https://chart.yhype.me/github/repository-star/v1/278929867.svg)](https://yhype.me?utm_source=github&utm_medium=antonkomarev-github-profile-views-counter&utm_content=chart-repository-star-cumulative)
-
-[Anton Komarev]: https://komarev.com
 [GitHub, Inc]: https://github.com
-[Live demo]: https://github.com/antonkomarev
-[my profile repository]: https://github.com/antonkomarev/antonkomarev
-[Help me cut server costs]: https://paypal.me/antonkomarev
-[Become a sponsor]: https://paypal.me/antonkomarev
+[Live demo]: https://github.com/WhiteHades
+[my profile repository]: https://github.com/WhiteHades/WhiteHades
 [GitHub Camo service]: https://github.blog/2010-11-13-sidejack-prevention-phase-3-ssl-proxied-assets/
-[Ÿ HŸPE]: https://yhype.me
