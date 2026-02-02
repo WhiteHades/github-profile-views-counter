@@ -1,4 +1,10 @@
-/.docker-volume-postgres/
-/.idea/
-/vendor/
+node_modules/
+.next/
+.vercel/
 .env
+.env.local
+.env.*.local
+.DS_Store
+npm-debug.log*
+*.swp
+!.env.example
