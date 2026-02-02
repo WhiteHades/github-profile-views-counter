@@ -1,0 +1,19 @@
+{
+  "name": "github-profile-views-counter",
+  "private": true,
+  "version": "1.0.0",
+  "description": "GitHub Profile views counter. Next.js + Redis deployment.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "badge-maker": "4.1.0",
+    "next": "16.1.6",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "redis": "5.0.0"
+  }
+}
