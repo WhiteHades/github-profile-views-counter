@@ -20,6 +20,39 @@ It counts how many times your GitHub profile has been viewed and displays them i
 
 ![antonkomarev-profile-views-counter](https://user-images.githubusercontent.com/1849174/88077155-9ccc2400-cb83-11ea-8d9c-d18a8b1dc297.png)
 
+## Next.js Deployment (Vercel)
+
+This fork replaces the PHP runtime with a Next.js App Router endpoint for easier Vercel deployments.
+The badge endpoint remains at the root URL (`/?username=...`) for drop-in compatibility.
+
+### Environment
+
+```
+REPOSITORY=redis
+REDIS_URL=redis://localhost:6379/0
+```
+
+Optional for local testing:
+
+```
+REPOSITORY=file
+FILE_STORAGE_PATH=./storage
+```
+
+> [!NOTE]
+>
+> `REPOSITORY=pdo` is not supported in this Next.js build.
+
+### Local Dev
+
+```
+npm install
+cp .env.example .env
+npm run dev
+```
+
+Open `/docs` for a styled usage overview.
+
 ## Usage
 
 Cloud solution launched as 100% free experience. [Help me cut server costs] if you like this service.
